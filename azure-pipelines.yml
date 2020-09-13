@@ -20,7 +20,6 @@ steps:
     DUMMY_VAR=production_host
     '@
     Get-Content -Path $(System.DefaultWorkingDirectory)\.env.production
-    Get-ChildItem -Path $(System.DefaultWorkingDirectory)\web
     displayName: 'Create ".env.production" file'
   
   env:
