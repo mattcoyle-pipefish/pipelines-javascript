@@ -45,4 +45,4 @@ steps:
     azureSubscription: $(azureSubscription)
     appType: webAppLinux
     appName: $(appName)
-    package: $(System.DefaultWorkingDirectory)/**/*.zip
+    package: $(Build.ArtifactStagingDirectory)/*.zip
