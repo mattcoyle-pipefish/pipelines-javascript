@@ -15,7 +15,18 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- powershell: |
+    New-Item -Path $(System.DefaultWorkingDirectory) -Name ".env.production" -Force -Value @'
+    DUMMY_VAR=production_host
+    '@
+    Get-Content -Path $(System.DefaultWorkingDirectory)\.env.production
+    Get-ChildItem -Path $(System.DefaultWorkingDirectory)\web
+    displayName: 'Create ".env.production" file'
+  
+  env:
+    NODE_ENV: production
+        
 - script: |
     npm install
-    npm run build
+    npm run start
   displayName: 'npm install and build'
