@@ -5,7 +5,7 @@
 
 variables:
   azureSubscription: mattcoyle
-  appName: Test
+  appName: mattcoyle-microsoftpipelines
 
 trigger:
 - master
